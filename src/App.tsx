@@ -1,15 +1,13 @@
-
-import './App.css'
+import './App.css';
 
 function App() {
-const a   = 1;
+  const a = 1;
 
   return (
     <>
- <h1>Hello Vite + React</h1>
-
+      <h1>Hello Vite + React</h1>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
