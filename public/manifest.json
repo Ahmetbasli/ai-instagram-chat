@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Medium Charged",
+  "description": "Table of Contents to help readers on any page!",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["assets/content.js"],
+      "matches": ["https://www.instagram.com/direct/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "assets/background.js",
+    "type": "module"
+  },
+  "web_accessible_resources": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "resources": ["assets/*"]
+    }
+  ],
+  "permissions": ["storage", "scripting"]
+}

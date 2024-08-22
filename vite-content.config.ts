@@ -1,20 +1,13 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "./src"),
-    },
-  },
   build:{
-    target:"esnext",
+    emptyOutDir: false,
     rollupOptions:{
       input:{
-        popup: "index.html",
+        content: "./src/content-script/content-script.ts",
+        "content-index": "./src/content-script/index.tsx",
       },
       output:{
         entryFileNames: "assets/[name].js"
@@ -22,3 +15,6 @@ export default defineConfig({
     },
   },
 })
+
+
+
