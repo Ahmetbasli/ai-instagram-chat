@@ -1,5 +1,5 @@
 export const updateAssociatedInput = (newValue: string): boolean => {
-  const messageBox = document.querySelector('div[contenteditable="true"][aria-label="Message"]') as HTMLElement | null;
+  const messageBox = document.querySelector('div[contenteditable="true"][role="textbox"]') as HTMLElement | null;
 
   // Handle the case where the messageBox is null
   if (!messageBox) {
