@@ -8,7 +8,7 @@ import { updateAssociatedInput } from "../utils/update-associated-input";
 
 export const GenerateButton = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const { systemMessage, apiKey } = useStorage();
+  const { systemMessage, apiKey, openAIModel } = useStorage();
 
   const messages = useInstagramMessages();
   const formatedMessages = formatMessages(messages);
@@ -16,7 +16,7 @@ export const GenerateButton = () => {
   const handleClick = async () => {
     setIsLoading(true);
     try {
-      const generatedMessage = await generateMessage(systemMessage, apiKey, formatedMessages);
+      const generatedMessage = await generateMessage(systemMessage, apiKey, formatedMessages, openAIModel);
       const updated = updateAssociatedInput(generatedMessage);
       if (!updated) {
         console.error("Failed to update input with generated message");
